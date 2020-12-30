@@ -9,8 +9,11 @@
   <title>Studio Ghibli Films</title>
 </head>
 <body>
-  <h2 class='heading'>Studio Ghibli Films<div class="ghibli-logo"></div></h2>
   <div class="main">
+    <div class='heading'>Studio Ghibli Films
+      <div ><img class="ghibli-logo" src="img/ghibli-logo.png" alt=""></div>
+      <div class="created-by">Nate M. November 2020</div>
+    </div>
         <form class="search-form" id="search-form">
           <p>A list of Studio Ghibli films as pulled from their website using the Ghibli API. Click the button bellow to view a list of their films.
           Select a film to view a brief description, see whom directed and produced each film, along with the release date and overall rating.</p>
@@ -30,16 +33,15 @@
           Away won the Golden Bear in 2002 and the Academy Award for Best Animated Feature Film in 2003. Totoro, a character from My Neighbor
           Totoro, is the studio's mascot.</span>
       </div>
-      <div class="anime-title-container">
+      <div class="anime-box">
         <div class="display-anime-title" id="display-anime-title">
+          <button class="close-button" id="close-button">X</button>
             <span id="anime-movies"></span>
         </div>
-        <button class="close-button" id="close-button">X</button>
+        <div class="anime-info-container" id="anime-info-container">
+          <span class="display-anime-info"></span>
+        </div>
       </div>
-      <div class="anime-info-container" id="anime-info-container">
-        <div class="display-anime-info"></div>
-      </div>
-      <div class="created-by">NayNayRen &copy; November 2020</div>
   </div>
   <script src="scripts.js" charset="utf-8"></script>
 </body>

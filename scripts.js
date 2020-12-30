@@ -38,13 +38,13 @@ function getAnimeByID(filmID){// gets and adds film info to be displayed
       span.innerHTML = `
       <div class='display-anime-info-header'>
         <span>${filmTitle}</span>
-        <img class='film-art' src='img/${titleWithoutApostrophe}.jpg'>
       </div>
       <p class='film-description'>${filmDescription}</p>
       <span class='film-info'>Director: ${filmDirector}</span><br>
       <span class='film-info'>Producer: ${filmProducer}</span><br>
       <span class='film-info'>Released: ${releaseDate}</span><br>
       <span class='film-info'>Rating: ${rating} / 100</span>
+      <img class='film-art' src='img/${titleWithoutApostrophe}.jpg'>
       `;
       //console.log(filmID);
       displayAnimeInfo.appendChild(span);// adds elements with info to be displayed
