@@ -261,7 +261,7 @@ body{
   .film-art{
     right: 10px;
     bottom: -185px;;
-    width: 150px;
+    width: 140px;
   }
 
   .film-description{
@@ -308,7 +308,9 @@ body{
   }
 
   .film-art{
-    right: -15px;
+    bottom: -150px;
+    right: 10px;
+    width: 125px;
   }
 
   .film-description{
@@ -371,8 +373,9 @@ body{
   }
 
   .film-art{
-    top: 0;
-    right: -130px;
+    top: 20px;
+    right: -85px;
+    width: 100px;
   }
 
   .film-description{
