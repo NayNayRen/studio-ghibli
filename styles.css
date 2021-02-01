@@ -21,7 +21,6 @@ body{
   background-attachment: fixed;
   background: url('img/spirited-away.jpg');
   background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
   margin: 0;
@@ -173,7 +172,7 @@ body{
   flex-direction: column;
   font-family: 'Noto Sans', sans-serif;
   font-size: 18px;
-  margin: 40px 0 0 40px;
+  margin: 40px 0 0 200px;
   max-width: 700px;
   padding: 25px 25px 0 15px;
   text-align: left;
@@ -202,7 +201,7 @@ body{
 }
 
 .heading{
-  background-color: rgba(252,221,221,1);
+  background-color: rgba(204,153,153,1);
   border-bottom: solid 1px #000;
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
@@ -215,7 +214,6 @@ body{
 
 .main{
   min-height: 100%;
-  padding-bottom: 50px;
 
 }
 .search-form{
@@ -280,6 +278,7 @@ body{
 
   .ghibli-history{
     font-size: 16px;
+    margin: 40px auto;
     padding: 10px 10px 0 5px;
   }
 
@@ -359,7 +358,7 @@ body{
   }
 
   .anime-info-container{
-    margin-top: 10px;
+    margin: 10px 0;
     width: 90%;
   }
 
@@ -374,8 +373,8 @@ body{
 
   .film-art{
     top: 20px;
-    right: -85px;
-    width: 100px;
+    right: -120px;
+    width: 135px;
   }
 
   .film-description{
