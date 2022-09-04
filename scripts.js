@@ -1,6 +1,6 @@
 function loadScript() {
   const submitForm = document.querySelector('#search-form');
-  const displayAnimeTitle = document.querySelector('#display-anime-title');
+  const displayAnimeTitle = document.querySelector('.display-anime-title');
   const anime = document.querySelector('#anime-movies');
   const displayAnimeInfo = document.querySelector('.display-anime-info');
   const closeButton = document.querySelector('#close-button');
@@ -25,7 +25,7 @@ function loadScript() {
       )
       .sort()
       .join(''); // joins each film to list of films for display
-    displayAnimeTitle.style.display = 'block';
+    displayAnimeTitle.style.display = 'flex';
     closeButton.style.display = 'block'; // removes close button
     ghibliHistory.style.display = 'none'; // removes the history window
   }
@@ -46,12 +46,13 @@ function loadScript() {
   <div class='display-anime-info-header'>
     <span>${filmTitle}</span>
   </div>
-  <p class='film-description'>${filmDescription}</p>
+  <p class='film-description'>${filmDescription}
+  <img class='film-art' src='img/${titleWithoutApostrophe}.jpg'>
+  </p>
   <span class='film-info'>Director: ${filmDirector}</span><br>
   <span class='film-info'>Producer: ${filmProducer}</span><br>
   <span class='film-info'>Released: ${releaseDate}</span><br>
   <span class='film-info'>Rating: ${rating} / 100</span>
-  <img class='film-art' src='img/${titleWithoutApostrophe}.jpg'>
   `;
     displayAnimeInfo.appendChild(div); // adds elements with info to be displayed
   }
