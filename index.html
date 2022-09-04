@@ -1,48 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css">
-  <link rel="stylesheet" href="styles.css">
-  <title>Studio Ghibli Films</title>
-</head>
-<body>
-    <div class='heading'>Studio Ghibli Films
-      <div ><img class="ghibli-logo" src="img/ghibli-logo.png" alt=""></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Studio Ghibli Films</title>
+  </head>
+  <body>
+    <header>
+      <h2>Studio Ghibli Films</h2>
+      <img
+        class="ghibli-logo"
+        src="img/ghibli-logo.png"
+        alt="Studio Ghibli Logo"
+      />
       <div class="created-by">Nate M. November 2020</div>
-    </div>
+    </header>
     <div class="main">
-        <form class="search-form" id="search-form">
-          <p>A list of Studio Ghibli films as pulled from their website using the Ghibli API. Click the button bellow to view a list of their films.
-          Select a film to view a brief description, see whom directed and produced each film, along with the release date and overall rating.</p>
-          <button type='submit' class="search-button">Ghibli's films.</button>
-        </form>
+      <form class="search-form" id="search-form">
+        <p>
+          A list of Studio Ghibli films as pulled from their website using the
+          Ghibli API. Click the button bellow to view a list of their films.
+          Select a film to view a brief description, see whom directed and
+          produced each film, along with the release date and overall rating.
+        </p>
+        <button type="submit" class="search-button">Ghibli's films.</button>
+      </form>
       <div class="ghibli-history">
-        <span>Studio Ghibli Inc. (Japanese: 株式会社スタジオジブ) is a Japanese animation film studio headquartered in
-          Koganei, Tokyo. The studio is best known for its animated feature films, and has also produced several short films, television commercials,
-          and one television film.</span>
-        <span>It was founded on June 15, 1985 by directors Hayao Miyazaki and Isao Takahata and producer Toshio Suzuki,
-          after the success of Topcraft's anime film Nausicaä of the Valley of the Wind (1984). Studio Ghibli has also collaborated with video game
-          studios on the visual development of several video games.</span>
-        <span>Six of Studio Ghibli's films are among the 10 highest-grossing anime films made in Japan, with Spirited Away (2001) being the second
-          highest, grossing over US$360 million worldwide.</span>
-        <span>Many of their works have won the Animage Anime Grand Prix award, and four have
-          won the Japan Academy Prize for Animation of the Year. Five of Studio Ghibli's films have received Academy Award nominations. Spirited
-          Away won the Golden Bear in 2002 and the Academy Award for Best Animated Feature Film in 2003. Totoro, a character from My Neighbor
-          Totoro, is the studio's mascot.</span>
+        <span
+          >Studio Ghibli Inc. (Japanese: 株式会社スタジオジブ) is a Japanese
+          animation film studio headquartered in Koganei, Tokyo. The studio is
+          best known for its animated feature films, and has also produced
+          several short films, television commercials, and one television
+          film.</span
+        >
+        <span
+          >It was founded on June 15, 1985 by directors Hayao Miyazaki and Isao
+          Takahata and producer Toshio Suzuki, after the success of Topcraft's
+          anime film Nausicaä of the Valley of the Wind (1984). Studio Ghibli
+          has also collaborated with video game studios on the visual
+          development of several video games.</span
+        >
+        <span
+          >Six of Studio Ghibli's films are among the 10 highest-grossing anime
+          films made in Japan, with Spirited Away (2001) being the second
+          highest, grossing over US$360 million worldwide.</span
+        >
+        <span
+          >Many of their works have won the Animage Anime Grand Prix award, and
+          four have won the Japan Academy Prize for Animation of the Year. Five
+          of Studio Ghibli's films have received Academy Award nominations.
+          Spirited Away won the Golden Bear in 2002 and the Academy Award for
+          Best Animated Feature Film in 2003. Totoro, a character from My
+          Neighbor Totoro, is the studio's mascot.</span
+        >
       </div>
       <div class="anime-box">
         <div class="display-anime-title" id="display-anime-title">
           <button class="close-button" id="close-button">X</button>
-            <span id="anime-movies"></span>
+          <span id="anime-movies"></span>
         </div>
         <div class="anime-info-container" id="anime-info-container">
-          <span class="display-anime-info"></span>
+          <div class="display-anime-info"></div>
         </div>
       </div>
-  </div>
-  <script src="scripts.js" charset="utf-8"></script>
-</body>
+    </div>
+    <script src="scripts.js" charset="utf-8"></script>
+  </body>
 </html>
