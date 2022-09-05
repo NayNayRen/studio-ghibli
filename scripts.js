@@ -25,9 +25,10 @@ function loadScript() {
       )
       .sort()
       .join(''); // joins each film to list of films for display
-    displayAnimeTitle.style.display = 'flex';
-    closeButton.style.display = 'block'; // removes close button
-    ghibliHistory.style.display = 'none'; // removes the history window
+    displayAnimeTitle.style.opacity = '1';
+    // closeButton.style.display = 'block';
+    ghibliHistory.style.left = '-100%'; // removes the history window
+    ghibliHistory.style.opacity = '0';
   }
 
   async function getAnimeByID(filmID) {
@@ -78,19 +79,28 @@ function loadScript() {
     }
   }
 
+  function positionHistory() {
+    if (window.innerWidth < 1200) {
+      ghibliHistory.style.left = '50%';
+    } else {
+      ghibliHistory.style.left = '200px';
+    }
+  }
+
   function closeDisplay() {
     // closes all info windows and shows history
-    displayAnimeTitle.style.display = 'none';
+    displayAnimeTitle.style.opacity = '0';
     displayAnimeInfo.style.display = 'none';
     displayAnimeInfo.innerHTML = '';
-    closeButton.style.display = 'none';
-    ghibliHistory.style.display = 'flex';
+    ghibliHistory.style.opacity = '1';
+    positionHistory();
   }
 
   // event listeners
   closeButton.addEventListener('click', closeDisplay);
   submitForm.addEventListener('submit', showAnimeTitle);
   document.addEventListener('click', showAnimeInfo);
+  window.addEventListener('resize', positionHistory);
 }
 
 window.onload = loadScript;
