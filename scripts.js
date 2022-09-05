@@ -3,7 +3,7 @@ function loadScript() {
   const displayAnimeTitle = document.querySelector('.display-anime-title');
   const anime = document.querySelector('#anime-movies');
   const displayAnimeInfo = document.querySelector('.display-anime-info');
-  const closeButton = document.querySelector('#close-button');
+  const closeTitleButton = document.querySelector('#close-title-button');
   const ghibliHistory = document.querySelector('.ghibli-history');
 
   async function getAnimeTitle() {
@@ -26,8 +26,8 @@ function loadScript() {
       .sort()
       .join(''); // joins each film to list of films for display
     displayAnimeTitle.style.opacity = '1';
-    // closeButton.style.display = 'block';
-    ghibliHistory.style.left = '-100%'; // removes the history window
+    displayAnimeTitle.style.zIndex = '0';
+    ghibliHistory.style.zIndex = '-1'; // removes the history window
     ghibliHistory.style.opacity = '0';
   }
 
@@ -46,6 +46,7 @@ function loadScript() {
     div.innerHTML = `
   <div class='display-anime-info-header'>
     <span>${filmTitle}</span>
+    <span id='close-anime-button' class='close-anime-button'>X</aspan>
   </div>
   <p class='film-description'>${filmDescription}
   <img class='film-art' src='img/${titleWithoutApostrophe}.jpg'>
@@ -56,6 +57,10 @@ function loadScript() {
   <span class='film-info'>Rating: ${rating} / 100</span>
   `;
     displayAnimeInfo.appendChild(div); // adds elements with info to be displayed
+    const closeAnimeButton = document.querySelector('#close-anime-button');
+    closeAnimeButton.addEventListener('click', () => {
+      displayAnimeInfo.style.display = 'none';
+    });
   }
 
   async function getAnimeInfo() {
@@ -79,28 +84,19 @@ function loadScript() {
     }
   }
 
-  function positionHistory() {
-    if (window.innerWidth < 1200) {
-      ghibliHistory.style.left = '50%';
-    } else {
-      ghibliHistory.style.left = '200px';
-    }
-  }
-
-  function closeDisplay() {
-    // closes all info windows and shows history
+  function closeTitleDisplay() {
     displayAnimeTitle.style.opacity = '0';
+    displayAnimeTitle.style.zIndex = '-1';
     displayAnimeInfo.style.display = 'none';
     displayAnimeInfo.innerHTML = '';
     ghibliHistory.style.opacity = '1';
-    positionHistory();
+    ghibliHistory.style.zIndex = '0';
   }
 
   // event listeners
-  closeButton.addEventListener('click', closeDisplay);
+  closeTitleButton.addEventListener('click', closeTitleDisplay);
   submitForm.addEventListener('submit', showAnimeTitle);
   document.addEventListener('click', showAnimeInfo);
-  window.addEventListener('resize', positionHistory);
 }
 
 window.onload = loadScript;

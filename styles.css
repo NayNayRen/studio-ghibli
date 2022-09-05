@@ -43,7 +43,21 @@ body {
   padding: 0;
 }
 
-.close-button {
+.close-anime-button {
+  background-color: #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  padding: 2px 15px;
+  position: absolute;
+  right: 15px;
+  top: 5px;
+}
+
+.close-anime-button:hover {
+  cursor: pointer;
+}
+
+.close-title-button {
   background-color: #fff;
   border-radius: 5px;
   border: none;
@@ -200,8 +214,9 @@ body {
   padding: 25px 15px;
   position: absolute;
   top: 0;
-  transition: left 1000ms ease, opacity 500ms ease;
+  transition: z-index 500ms ease, opacity 500ms ease;
   width: 700px;
+  z-index: 0;
   /* outline: solid 1px blue; */
 }
 
@@ -312,12 +327,21 @@ html {
     width: 400px;
   }
 
+  .anime-info-container {
+    left: calc(50% - 50px);
+    width: 450px;
+  }
+
   .display-anime-title {
     margin: auto;
   }
 
   .film-art {
     width: 140px;
+  }
+
+  .film-title {
+    font-size: 20px;
   }
 
   header {
@@ -345,13 +369,21 @@ html {
   .anime-info-container {
     -webkit-transform: translateY(0);
     left: 0;
-    top: 100%;
-    transform: translateY(0);
+    top: 50%;
+    transform: translateY(-50%);
     width: 100%;
   }
 
   body {
     background-image: url('img/spirited-away-mobile.jpg');
+  }
+
+  .close-anime-button {
+    font-size: 18px;
+    padding: 0 15px;
+    position: absolute;
+    right: 10px;
+    top: 5px;
   }
 
   .display-anime-info {
@@ -376,10 +408,6 @@ html {
 
   .film-description {
     padding: 5px 10px;
-  }
-
-  .film-title {
-    font-size: 22px;
   }
 
   .ghibli-history {
@@ -414,10 +442,6 @@ html {
 }
 
 @media (max-width: 400px) {
-  .film-art {
-    display: none;
-  }
-
   .ghibli-logo {
     -webkit-transform: translateY(-100%);
     top: calc(100% - 5px);
