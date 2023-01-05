@@ -1,10 +1,10 @@
 function loadScript() {
-  const submitForm = document.querySelector('#search-form');
-  const displayAnimeTitle = document.querySelector('.display-anime-title');
-  const anime = document.querySelector('#anime-movies');
-  const displayAnimeInfo = document.querySelector('.display-anime-info');
-  const closeTitleButton = document.querySelector('#close-title-button');
-  const ghibliHistory = document.querySelector('.ghibli-history');
+  const submitForm = document.querySelector("#search-form");
+  const displayAnimeTitle = document.querySelector(".display-anime-title");
+  const anime = document.querySelector("#anime-movies");
+  const displayAnimeInfo = document.querySelector(".display-anime-info");
+  const closeTitleButton = document.querySelector("#close-title-button");
+  const ghibliHistory = document.querySelector(".ghibli-history");
 
   async function getAnimeTitle() {
     const res = await fetch(`https://ghibliapi.herokuapp.com/films`);
@@ -24,11 +24,11 @@ function loadScript() {
     `
       )
       .sort()
-      .join(''); // joins each film to list of films for display
-    displayAnimeTitle.style.opacity = '1';
-    displayAnimeTitle.style.zIndex = '0';
-    ghibliHistory.style.zIndex = '-1'; // removes the history window
-    ghibliHistory.style.opacity = '0';
+      .join(""); // joins each film to list of films for display
+    displayAnimeTitle.style.opacity = "1";
+    displayAnimeTitle.style.zIndex = "0";
+    ghibliHistory.style.zIndex = "-1"; // removes the history window
+    ghibliHistory.style.opacity = "0";
   }
 
   async function getAnimeByID(filmID) {
@@ -41,8 +41,8 @@ function loadScript() {
     const filmDescription = data.description;
     const releaseDate = data.release_date;
     const rating = data.rt_score;
-    let titleWithoutApostrophe = data.title.replace("'", '');
-    const div = document.createElement('div');
+    let titleWithoutApostrophe = data.title.replace("'", "");
+    const div = document.createElement("div");
     div.innerHTML = `
   <div class='display-anime-info-header'>
     <span>${filmTitle}</span>
@@ -57,9 +57,9 @@ function loadScript() {
   <span class='film-info'>Rating: ${rating} / 100</span>
   `;
     displayAnimeInfo.appendChild(div); // adds elements with info to be displayed
-    const closeAnimeButton = document.querySelector('#close-anime-button');
-    closeAnimeButton.addEventListener('click', () => {
-      displayAnimeInfo.style.display = 'none';
+    const closeAnimeButton = document.querySelector("#close-anime-button");
+    closeAnimeButton.addEventListener("click", () => {
+      displayAnimeInfo.style.display = "none";
     });
   }
 
@@ -71,32 +71,32 @@ function loadScript() {
 
   async function showAnimeInfo(e) {
     // adds each films info to the DOM when title is clicked
-    if (e.target.id == 'film-title') {
+    if (e.target.id == "film-title") {
       let title = e.target.text.trim();
       let film = await getAnimeInfo();
       film.map((filmInfo) => {
         if (title == filmInfo.title) {
           getAnimeByID(filmInfo.id);
-          displayAnimeInfo.style.display = 'flex';
+          displayAnimeInfo.style.display = "flex";
         }
-        displayAnimeInfo.innerHTML = '';
+        displayAnimeInfo.innerHTML = "";
       });
     }
   }
 
   function closeTitleDisplay() {
-    displayAnimeTitle.style.opacity = '0';
-    displayAnimeTitle.style.zIndex = '-1';
-    displayAnimeInfo.style.display = 'none';
-    displayAnimeInfo.innerHTML = '';
-    ghibliHistory.style.opacity = '1';
-    ghibliHistory.style.zIndex = '0';
+    displayAnimeTitle.style.opacity = "0";
+    displayAnimeTitle.style.zIndex = "-1";
+    displayAnimeInfo.style.display = "none";
+    displayAnimeInfo.innerHTML = "";
+    ghibliHistory.style.opacity = "1";
+    ghibliHistory.style.zIndex = "0";
   }
 
   // event listeners
-  closeTitleButton.addEventListener('click', closeTitleDisplay);
-  submitForm.addEventListener('submit', showAnimeTitle);
-  document.addEventListener('click', showAnimeInfo);
+  closeTitleButton.addEventListener("click", closeTitleDisplay);
+  submitForm.addEventListener("submit", showAnimeTitle);
+  document.addEventListener("click", showAnimeInfo);
 }
 
 window.onload = loadScript;
