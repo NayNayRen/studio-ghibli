@@ -1,24 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
-
-* {
-  box-sizing: border-box;
-}
-
 /* holds film title and info */
 .anime-box {
-  -ms-flex-align: start;
+  -ms-flex-align: center;
   -ms-flex-direction: column;
-  -webkit-box-align: start;
+  -webkit-box-align: center;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  align-items: flex-start;
+  align-items: center;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  margin: 20px 0 0 0;
+  margin: 30px 0 0 0;
   position: relative;
-  width: 100%;
+  width: 700px;
   /* outline: solid 1px blue; */
 }
 
@@ -31,16 +25,8 @@
 }
 
 body {
-  background-attachment: fixed;
   background-color: #000;
-  background-image: url('img/spirited-away.jpg');
-  background-position: center;
-  background-size: cover;
-  font-family: 'Nunito', sans-serif;
-  height: 100vh;
-  margin: 0;
-  overflow-x: hidden;
-  padding: 0;
+  font-family: 'Nunito Sans', sans-serif;
 }
 
 .close-anime-button {
@@ -83,18 +69,14 @@ body {
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
   -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(23.8%, rgba(204, 153, 153, 1)),
-    color-stop(92%, rgba(252, 221, 221, 1))
-  );
-  background-image: linear-gradient(
-    0deg,
-    rgba(204, 153, 153, 1) 23.8%,
-    rgba(252, 221, 221, 1) 92%
-  );
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(23.8%, rgba(204, 153, 153, 1)),
+      color-stop(92%, rgba(252, 221, 221, 1)));
+  background-image: linear-gradient(0deg,
+      rgba(204, 153, 153, 1) 23.8%,
+      rgba(252, 221, 221, 1) 92%);
   border-radius: 5px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.75);
   color: #000;
@@ -114,7 +96,7 @@ body {
 .display-anime-title {
   -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
   -webkit-transition: opacity 500ms ease;
-  background-image: url('img/totoro.jpg');
+  background-image: url('../img/totoro.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -185,37 +167,47 @@ body {
   cursor: pointer;
 }
 
+footer {
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  text-align: center;
+}
+
+.footer-logo {
+  margin: 0 auto;
+  width: 50px;
+}
+
+.footer-logo img {
+  height: auto;
+  width: 100%;
+}
+
 .ghibli-history {
   -ms-flex-direction: column;
   -webkit-box-direction: normal;
   -webkit-box-orient: vertical;
-  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 0 10px #000;
   -webkit-transition: left 1000ms ease, opacity 500ms ease;
-  background-image: -webkit-gradient(
-    linear,
-    left bottom,
-    left top,
-    color-stop(23.8%, rgba(204, 153, 153, 1)),
-    color-stop(92%, rgba(252, 221, 221, 1))
-  );
-  background-image: linear-gradient(
-    0deg,
-    rgba(204, 153, 153, 1) 23.8%,
-    rgba(252, 221, 221, 1) 92%
-  );
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(23.8%, rgba(204, 153, 153, 1)),
+      color-stop(92%, rgba(252, 221, 221, 1)));
+  background-image: linear-gradient(0deg,
+      rgba(204, 153, 153, 1) 23.8%,
+      rgba(252, 221, 221, 1) 92%);
   border-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
+  box-shadow: 0 0 10px #000;
   display: -ms-flexbox;
   display: -webkit-box;
   display: flex;
   flex-direction: column;
-  left: 200px;
   opacity: 1;
   padding: 25px 15px;
-  position: absolute;
-  top: 0;
   transition: z-index 500ms ease, opacity 500ms ease;
-  width: 700px;
+  width: 100%;
   z-index: 0;
   /* outline: solid 1px blue; */
 }
@@ -265,28 +257,30 @@ header h2 {
   margin: 0;
 }
 
-html {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  scroll-behavior: smooth;
-  width: 100%;
-}
-
 .main {
+  align-items: center;
+  background-attachment: fixed;
+  background-color: #000;
+  background-image: url('../img/ghibli.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100%;
   padding-bottom: 20px;
   position: relative;
 }
 
 .search-form {
-  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0px 10px 20px #000;
   background-color: #fff;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.75);
-  margin: auto;
-  min-height: 200px;
-  padding: 5px 15px 10px 15px;
+  box-shadow: 0px 10px 20px #000;
+  margin: 0 auto;
+  height: auto;
+  padding: 5px 15px 15px 15px;
   text-align: center;
   width: 550px;
 }
@@ -303,7 +297,7 @@ html {
   color: #fff;
   font-size: 18px;
   font-weight: bold;
-  padding: 10px 30px;
+  padding: 8px 30px;
   transition: opacity 150ms ease;
 }
 
@@ -317,10 +311,9 @@ html {
 }
 
 @media (max-width: 1200px) {
+
   .anime-box {
-    -ms-flex-pack: center;
-    -webkit-box-pack: center;
-    justify-content: center;
+    width: 600px;
   }
 
   .anime-info-container {
@@ -349,21 +342,15 @@ html {
   }
 
   .ghibli-history {
-    -webkit-transform: translateX(-50%);
-    font-size: 16px;
-    left: 50%;
+    font-size: 18px;
     padding: 10px;
-    transform: translateX(-50%);
   }
 }
 
 @media (max-width: 700px) {
+
   .anime-box {
-    -ms-flex-direction: column;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: vertical;
-    flex-direction: column;
-    margin: 20px auto;
+    width: 95%;
   }
 
   .anime-info-container {
@@ -372,10 +359,6 @@ html {
     top: 50%;
     transform: translateY(-50%);
     width: 100%;
-  }
-
-  body {
-    background-image: url('img/spirited-away-mobile.jpg');
   }
 
   .close-anime-button {
@@ -412,15 +395,13 @@ html {
 
   .ghibli-history {
     border-right: none;
-    border-radius: 0;
-    padding: 10px 0;
-    width: 100%;
+    padding: 10px 5px;
   }
 
   .ghibli-history span {
     border-radius: 0;
     border-right: none;
-    font-size: 16px;
+    font-size: 18px;
   }
 
   .ghibli-logo {
@@ -435,9 +416,7 @@ html {
   }
 
   .search-form {
-    border-radius: 0;
-    padding: 5px;
-    width: 100%;
+    width: 90%;
   }
 }
 
